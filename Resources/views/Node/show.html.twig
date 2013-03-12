@@ -1,0 +1,53 @@
+{% extends 'ACInst3Bundle::admin_layout.html.twig' %}
+
+{% block content_in %}
+<h1>Node</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Machine_name</th>
+            <td>{{ entity.machinename }}</td>
+        </tr>
+        <tr>
+            <th>Target_controller</th>
+            <td>{{ entity.targetcontroller }}</td>
+        </tr>
+        <tr>
+            <th>Target_params</th>
+            <td>{{ entity.targetparams }}</td>
+        </tr>
+        <tr>
+            <th>Label</th>
+            <td>{{ entity.label }}</td>
+        </tr>
+        <tr>
+            <th>Title</th>
+            <td>{{ entity.title }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('admin_node') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('admin_node_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('admin_node_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>
+{% endblock %}

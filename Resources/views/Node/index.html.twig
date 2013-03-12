@@ -1,0 +1,55 @@
+{% extends 'ACInst3Bundle::admin_layout.html.twig' %}
+
+{% block content_in %}
+<h1>Node list</h1>
+
+<table class="records_list">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Machine_name</th>
+            <th>Target_controller</th>
+            <th>Label</th>
+            <th>Title</th>
+            <th>Parent</th>
+            <th>Site</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('admin_node_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.machinename }}</td>
+            <td>{{ entity.targetcontroller }}</td>
+            <td>{{ entity.label }}</td>
+            <td>{{ entity.title }}</td>
+            <td>
+            	{% if entity.parent %}
+            	{{ entity.parent.title }}
+            	{% endif %}
+            </td>
+            <td>{{ entity.site.name }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('admin_node_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('admin_node_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ path('admin_node_new') }}">
+            Create a new entry
+        </a>
+    </li>
+</ul>
+{% endblock %}

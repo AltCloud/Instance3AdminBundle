@@ -1,0 +1,61 @@
+{% extends 'ACJMicroBundle::base_layout.html.twig' %}
+
+{% block page_stylesheets %}        	
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+{% endblock %}
+{% block page_javascripts %}
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>      
+{% endblock %}	
+
+{% block body %}
+<div data-role="page">
+	<div data-role="header">
+		<h1>Instance3 Admin</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		{% block sidebar %}
+			{% block sidebar_in %}
+			{% endblock %}					
+		{% endblock %}
+		{% block content %}
+		<div data-role="collapsible" data-mini="true">
+			<h3>Instance3 Objects</h3>
+			<ul id="nav" data-role="listview" data-inset="true">
+					<li data-role="list-divider">Core</li> 
+					<li><a href="{{ path('admin_node') }}">Nodes</a></li>
+					<li><a href="{{ path('admin_site') }}">Sites</a></li>
+					<li><a href="{{ path('admin_text') }}">Texts</a></li>
+					<li data-role="list-divider">Blog</li> 
+					<li><a href="{{ path('admin_post') }}">Posts</a></li>
+					<li><a href="{{ path('admin_category') }}">Categorys</a></li>
+					<li data-role="list-divider">Event</li> 
+					<li><a href="{{ path('admin_agenda') }}">Agendas</a></li>
+					<li><a href="{{ path('admin_event') }}">Events</a></li>
+					<li data-role="list-divider">Location</li> 
+					<li><a href="{{ path('admin_map') }}">Maps</a></li>
+					<li><a href="{{ path('admin_location') }}">Locations</a></li>
+					<li data-role="list-divider">Grid</li> 
+					<li><a href="{{ path('admin_grid') }}">Grids</a></li>
+					<li data-role="list-divider">Media</li>
+					<li><a href="{{ path('admin_gallery') }}">Gallerys</a></li>
+					<li><a href="{{ path('admin_media') }}">Medias</a></li>
+					<li><a href="{{ path('admin_format') }}">Formats</a></li>
+            </ul>
+        </div>
+			{% block content_in %}
+			{% endblock %}	
+		{% endblock %}
+	</div><!-- /content -->
+	
+	<div data-role="footer">
+		{% block footer %}
+			{% block footer_in %}
+			{% endblock %}
+		{% endblock %}
+	</div><!-- /footer -->
+
+</div><!-- /page -->
+{% endblock %}

@@ -1,0 +1,30 @@
+admin_site:
+    pattern:  /
+    defaults: { _controller: "ACInst3AdminBundle:SiteAdmin:index" }
+
+admin_site_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "ACInst3AdminBundle:SiteAdmin:show" }
+
+admin_site_new:
+    pattern:  /new
+    defaults: { _controller: "ACInst3AdminBundle:SiteAdmin:new" }
+
+admin_site_create:
+    pattern:  /create
+    defaults: { _controller: "ACInst3AdminBundle:SiteAdmin:create" }
+    requirements: { _method: post }
+
+admin_site_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "ACInst3AdminBundle:SiteAdmin:edit" }
+
+admin_site_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "ACInst3AdminBundle:SiteAdmin:update" }
+    requirements: { _method: post }
+
+admin_site_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "ACInst3AdminBundle:SiteAdmin:delete" }
+    requirements: { _method: post }

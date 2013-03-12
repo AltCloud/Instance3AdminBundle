@@ -1,3 +1,11 @@
-ac_inst3_admin_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: ACInst3AdminBundle:Default:index }
+ACInst3Bundle_admin_node:
+    resource: "@ACInst3AdminBundle/Resources/config/routing/node.yml"
+    prefix:   /admin/node
+
+ACInst3Bundle_admin_site:
+    resource: "@ACInst3AdminBundle/Resources/config/routing/site.yml"
+    prefix:   /admin/site
+
+ACInst3Bundle_admin_text:
+    resource: "@ACInst3AdminBundle/Resources/config/routing/text.yml"
+    prefix:   /admin/text

@@ -1,0 +1,30 @@
+admin_text:
+    pattern:  /
+    defaults: { _controller: "ACInst3AdminBundle:TextAdmin:index" }
+
+admin_text_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "ACInst3AdminBundle:TextAdmin:show" }
+
+admin_text_new:
+    pattern:  /new
+    defaults: { _controller: "ACInst3AdminBundle:TextAdmin:new" }
+
+admin_text_create:
+    pattern:  /create
+    defaults: { _controller: "ACInst3AdminBundle:TextAdmin:create" }
+    requirements: { _method: post }
+
+admin_text_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "ACInst3AdminBundle:TextAdmin:edit" }
+
+admin_text_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "ACInst3AdminBundle:TextAdmin:update" }
+    requirements: { _method: post }
+
+admin_text_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "ACInst3AdminBundle:TextAdmin:delete" }
+    requirements: { _method: post }
